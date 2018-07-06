@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete TODO</title>
+</head>
+<body>
+<form action="{% url 'delete/{{todos.id}}' %}" method="post">
+    {% csrf_token %}
+     {% for todo in todos %}
+    <a href="/todo/{{todo.id}}">{{todo.title}}:</a> {{todo.text}}
+    </br>
+
+    {% endfor %}
+
+
+</form>
+</body>
+</html>
